@@ -28,5 +28,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        goButton.setOnClickListener {
+            val urlText = urlEditText.text.toString()
+        }
     }
 }
