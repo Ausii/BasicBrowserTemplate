@@ -30,6 +30,16 @@ class MainActivity : AppCompatActivity() {
 
         goButton.setOnClickListener {
             val urlText = urlEditText.text.toString()
+            val finalURL = validateURL(urlText)
+            webView.loadUrl(finalURL)
+        }
+    }
+
+    private fun validateURL(url: String): String {
+        if (url.startsWith("http://") || url.startsWith("https://")) {
+            return url
+        } else {
+            return "https://$url"
         }
     }
 }
